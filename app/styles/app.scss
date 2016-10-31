@@ -1,6 +1,8 @@
-// @import 'yoga-sass/assets/yoga';
-// @import 'normalize-css/normalize';
+$c-primary: #374140;
+$c-secondary: #da793f;
+$c-grey: #a9a9a9;
 
-// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+$fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome/scss/font-awesome';
 @import 'box-sizing';
+@import 'reset';
