@@ -1,13 +1,13 @@
 .favorites {
   display: flex;
   width: 100%;
-  // min-width: 20rem;
   height: 30%;
 
   &__group {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    padding: 0.5rem;
     border-top: 0.15rem solid $c-black;
     border-right: 0.15rem solid $c-black;
 
@@ -16,26 +16,8 @@
     }
   }
 
-  &__frame {
-    display: flex;
-    position: relative;
-    flex-grow: 1;
-  }
-
-  &__img {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
-    object-fit: contain;
-  }
-
   &__name {
     margin: 0;
-    padding: 0 0 0.5rem;
     color: $c-secondary;
     text-align: center;
   }

@@ -32,29 +32,35 @@
 
     <div class="app__content">
       <div class="main">
-        <div class="main__frame">
-          <img src="/monster/body-1.full.png" alt="" class="main__img">
-      <!-- <img src="/monster/eyes-1-crossed.full.png" alt="" class="content__img">
-        <img src="/monster/mouth-1.full.png" alt="" class="content__img"> -->
+        <div class="monster">
+          <img src="/monster/body-1.full.png" alt="" class="monster__img">
+          <img src="/monster/eyes-1-crossed.full.png" alt="" class="monster__img">
+          <img src="/monster/mouth-1.full.png" alt="" class="monster__img">
         </div>
       </div>
 
       <div class="favorites">
         <div class="favorites__group">
-          <div class="favorites__frame">
-            <img src="/monster/body-1.full.png" alt="" class="favorites__img">
+          <div class="monster">
+            <img src="/monster/body-1.full.png" alt="" class="monster__img">
+            <img src="/monster/eyes-1.full.png" alt="" class="monster__img">
+            <img src="/monster/mouth-1.full.png" alt="" class="monster__img">
           </div>
           <p class="favorites__name">Kara</p>
         </div>
         <div class="favorites__group">
-          <div class="favorites__frame">
-            <img src="/monster/body-1.full.png" alt="" class="favorites__img">
+          <div class="monster">
+            <img src="/monster/body-1.full.png" alt="" class="monster__img">
+            <img src="/monster/eyes-1.full.png" alt="" class="monster__img">
+            <img src="/monster/mouth-1.full.png" alt="" class="monster__img">
           </div>
           <p class="favorites__name">Cooper</p>
         </div>
         <div class="favorites__group">
-          <div class="favorites__frame">
-            <img src="/monster/body-1.full.png" alt="" class="favorites__img">
+          <div class="monster">
+            <img src="/monster/body-1.full.png" alt="" class="monster__img">
+            <img src="/monster/eyes-1.full.png" alt="" class="monster__img">
+            <img src="/monster/mouth-1.full.png" alt="" class="monster__img">
           </div>
           <p class="favorites__name">Maggie</p>
         </div>

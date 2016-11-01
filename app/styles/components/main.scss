@@ -1,22 +1,7 @@
 .main {
   display: flex;
-  justify-content: center;
   flex-grow: 1;
-
-  &__frame {
-    // display: flex;
-    // position: relative;
-    // flex-grow: 1;
-  }
-
-  &__img {
-    // position: absolute;
-    // top: 1rem;
-    // right: 1rem;
-    // bottom: 1rem;
-    // left: 1rem;
-    width: calc(100% - 2rem);
-    height: calc(100% - 2rem);
-    object-fit: contain;
-  }
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 }
