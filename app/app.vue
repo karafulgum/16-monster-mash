@@ -98,7 +98,15 @@ export default Vue.extend({
           .then((r) => r.json())
           .then((favorite) => {
             this.favorites = [favorite, ...this.favorites];
+
+            this.selected = {
+              name: '',
+              body: 0,
+              eyes: 0,
+              mouth: 0,
+            };
           });
+
       },
     },
 });
