@@ -24,8 +24,8 @@
         </div>
         <button class="sidebar__btn" @click="updatePart('eyes', 1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
       </div>
-      <form class="sidebar__form">
-        <input class="sidebar__input" type="text" name="name" placeholder="Name Your Creation">
+      <form class="sidebar__form" @submit.prevent="saveMonster">
+        <input class="sidebar__input" type="text" name="name" placeholder="Name Your Creation" v-model="selected.name">
         <button class="sidebar__submit">Save Favorite</button>
       </form>
     </div>
@@ -40,29 +40,13 @@
       </div>
 
       <div class="favorites">
-        <div class="favorites__group">
+        <div class="favorites__group" v-for="favorite in favorites">
           <div class="monster">
-            <img src="/monster/body-1.full.png" alt="" class="monster__img">
-            <img src="/monster/eyes-1.full.png" alt="" class="monster__img">
-            <img src="/monster/mouth-1.full.png" alt="" class="monster__img">
+            <img :src="'/monster/' + monsterParts.body[favorite.body] + '.full.png'" alt="" class="monster__img">
+            <img :src="'/monster/' + monsterParts.mouth[favorite.mouth] + '.full.png'" alt="" class="monster__img">
+            <img :src="'/monster/' + monsterParts.eyes[favorite.eyes] + '.full.png'" alt="" class="monster__img">
           </div>
-          <p class="favorites__name">Kara</p>
-        </div>
-        <div class="favorites__group">
-          <div class="monster">
-            <img src="/monster/body-1.full.png" alt="" class="monster__img">
-            <img src="/monster/eyes-1.full.png" alt="" class="monster__img">
-            <img src="/monster/mouth-1.full.png" alt="" class="monster__img">
-          </div>
-          <p class="favorites__name">Cooper</p>
-        </div>
-        <div class="favorites__group">
-          <div class="monster">
-            <img src="/monster/body-1.full.png" alt="" class="monster__img">
-            <img src="/monster/eyes-1.full.png" alt="" class="monster__img">
-            <img src="/monster/mouth-1.full.png" alt="" class="monster__img">
-          </div>
-          <p class="favorites__name">Maggie</p>
+          <p class="favorites__name">{{ favorite.name }}</p>
         </div>
       </div>
     </div>
@@ -80,19 +64,42 @@ export default Vue.extend({
               body: 0,
               mouth: 0,
               eyes: 0,
+              name: '',
             },
             monsterParts,
+            favorites: [],
         };
     },
 
     mounted() {
-      this.updatePart();
+      this.getFavorites();
     },
 
     methods: {
+      getFavorites() {
+        fetch('http://tiny-tn.herokuapp.com/collections/kf-monsters')
+          .then((r) => r.json())
+          .then((favorites) => {
+            this.favorites = favorites;
+          });
+      },
+
       updatePart(partName, difference = 1) {
         this.selected[partName] = (this.selected[partName] + difference) % this.monsterParts[partName].length;
-      }
+      },
+      saveMonster() {
+        fetch(`http://tiny-tn.herokuapp.com/collections/kf-monsters`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(this.selected)
+        })
+          .then((r) => r.json())
+          .then((favorite) => {
+            this.favorites = [favorite, ...this.favorites];
+          });
+      },
     },
 });
 </script>
