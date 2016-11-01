@@ -33,9 +33,9 @@
     <div class="app__content">
       <div class="main">
         <div class="monster">
-          <img src="/monster/body-1.full.png" alt="" class="monster__img">
-          <img src="/monster/eyes-1-crossed.full.png" alt="" class="monster__img">
-          <img src="/monster/mouth-1.full.png" alt="" class="monster__img">
+          <img :src="'/monster/' + monsterParts.body[selected.body] + '.full.png'" alt="" class="monster__img">
+          <img :src="'/monster/' + monsterParts.mouth[selected.mouth] + '.full.png'" alt="" class="monster__img">
+          <img :src="'/monster/' + monsterParts.eyes[selected.eyes] + '.full.png'" alt="" class="monster__img">
         </div>
       </div>
 
