@@ -1,8 +1,22 @@
 .main {
-  // display: flex;
-  // flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+
+  &__frame {
+    // display: flex;
+    // position: relative;
+    // flex-grow: 1;
+  }
 
   &__img {
-    height: 20rem;
+    // position: absolute;
+    // top: 1rem;
+    // right: 1rem;
+    // bottom: 1rem;
+    // left: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    object-fit: contain;
   }
 }
