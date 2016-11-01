@@ -1,0 +1,38 @@
+.favorites {
+  display: flex;
+  // flex-grow: 1;
+  flex-direction: row;
+  height: 10rem;
+
+  &__group {
+    display: flex;
+    flex-grow: 1;
+    border-top: 0.15rem solid $c-black;
+    border-right: 0.15rem solid $c-black;
+
+    &:last-of-type {
+      border-right: 0;
+    }
+  }
+
+  &__frame {
+    position: relative;
+    flex-grow: 1;
+  }
+
+  &__img {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    left: 1rem;
+    width: calc(100% - 2rem);
+    height: calc(100% - 2rem);
+    object-fit: contain;
+  }
+
+  &__name {
+    color: $c-secondary;
+    text-align: center;
+  }
+}
