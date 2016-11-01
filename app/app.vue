@@ -75,11 +75,23 @@ import Vue from 'vue';
 export default Vue.extend({
     data() {
         return {
-            monsterParts: [],
-            form: {
-                name: 'monster-name'
+            selected: {
+              body: 0,
+              mouth: 0,
+              eyes: 0,
             },
+            monsterParts,
         };
+    },
+
+    mounted() {
+      this.updatePart();
+    },
+
+    methods: {
+      updatePart(partName, difference = 1) {
+        this.selected[partName] = (this.selected[partName] + difference) % this.monsterParts[partName].length;
+      }
     },
 });
 </script>

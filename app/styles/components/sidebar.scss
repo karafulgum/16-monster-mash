@@ -15,7 +15,7 @@
   &__img-switcher {
     display: flex;
     flex-grow: 1;
-    justify-content: space-between;
+    // justify-content: space-between;
     border-right: 0.15rem solid $c-black;
     border-bottom: 0.15rem solid $c-black;
 
@@ -41,6 +41,7 @@
   }
 
   &__btn {
+    width: 1.5rem;
     border: 0;
     background: $c-secondary;
   }
