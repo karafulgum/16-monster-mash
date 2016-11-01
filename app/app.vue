@@ -4,25 +4,25 @@
     <div class="sidebar">
       <p class="sidebar__title">Build Your Monster</p>
       <div class="sidebar__img-switcher">
-        <button class="sidebar__btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="sidebar__btn" @click="updatePart('body', -1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
         <div class="sidebar__frame">
-          <img class="sidebar__img" src="/monster/body-1.png" alt="" />
+          <img class="sidebar__img" :src="'/monster/' + monsterParts.body[selected.body] + '.png'" alt="" />
         </div>
-        <button class="sidebar__btn"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="sidebar__btn" @click="updatePart('body', 1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
       </div>
       <div class="sidebar__img-switcher">
-        <button class="sidebar__btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="sidebar__btn" @click="updatePart('mouth', -1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
         <div class="sidebar__frame">
-          <img class="sidebar__img" src="/monster/mouth-1.png" alt="" />
+          <img class="sidebar__img" :src="'/monster/' + monsterParts.mouth[selected.mouth] + '.png'" alt="" />
         </div>
-        <button class="sidebar__btn"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="sidebar__btn" @click="updatePart('mouth', 1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
       </div>
       <div class="sidebar__img-switcher">
-        <button class="sidebar__btn"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+        <button class="sidebar__btn" @click="updatePart('eyes', -1)"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
         <div class="sidebar__frame">
-          <img class="sidebar__img" src="/monster/eyes-1-crossed.png" alt="" />
+          <img class="sidebar__img" :src="'/monster/' + monsterParts.eyes[selected.eyes] + '.png'" alt="" />
         </div>
-        <button class="sidebar__btn"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+        <button class="sidebar__btn" @click="updatePart('eyes', 1)"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
       </div>
       <form class="sidebar__form">
         <input class="sidebar__input" type="text" name="name" placeholder="Name Your Creation">
@@ -71,6 +71,7 @@
 
 <script>
 import Vue from 'vue';
+import monsterParts from './monster-parts';
 
 export default Vue.extend({
     data() {
