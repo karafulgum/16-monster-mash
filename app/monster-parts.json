@@ -1,0 +1,20 @@
+{
+  "body": [
+    "body-1",
+    "body-2",
+    "body-3"
+  ],
+  "mouth": [
+    "mouth-1",
+    "mouth-2",
+    "mouth-3"
+  ],
+  "eyes": [
+    "eyes-1",
+    "eyes-2-crossed",
+    "eyes-3",
+    "eyes-3-crossed",
+    "eyes-2",
+    "eyes-1-crossed"
+  ],
+}

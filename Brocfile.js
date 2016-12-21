@@ -13,11 +13,11 @@ const mv = require('broccoli-stew').mv;
 const rm = require('broccoli-stew').rm;
 const browserify = require('broccoli-watchify');
 const envify = require('envify');
-// const vueify = require('vueify');
+const vueify = require('vueify');
 
 function browserifyInit(b) {
   b.transform(envify);
-  // b.transform(vueify);
+  b.transform(vueify);
 }
 
 let pubFiles = new LiveReload('public');
@@ -37,7 +37,7 @@ const babelScript = new Babel(appNoSass);
 const appScript = browserify(babelScript, {
   browserify: {
     entries: ['./index'],
-    debug: true
+    debug: true,
   },
   outputFile: 'app.js',
 
@@ -57,7 +57,7 @@ if (process.env.EMBER_ENV === 'test') {
   const testJs = browserify(testTree, {
     browserify: {
       entries: ['./tests/index-test'],
-      debug: true
+      debug: true,
     },
     outputFile: 'tests.js',
 
